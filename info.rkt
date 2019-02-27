@@ -2,6 +2,7 @@
 (define collection "ts-all-dev")
 (define deps '("base"
                "https://github.com/thoughtstem/game-engine.git?branch=dev" 
+               "https://github.com/thoughtstem/TS-Kata-Collections.git?path=ts-kata-util&branch=dev" 
                "https://github.com/thoughtstem/TS-Languages.git?path=battle-arena&branch=dev" 
                "https://github.com/thoughtstem/TS-Languages.git?path=battle-arena-avengers&branch=dev"))
 (define build-deps '("scribble-lib" "racket-doc" "rackunit-lib"))
