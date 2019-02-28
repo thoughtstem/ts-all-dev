@@ -1,5 +1,7 @@
 # ts-all-dev
 
+[![Build Status](https://travis-ci.com/thoughtstem/ts-all-dev.svg?branch=master)](https://travis-ci.com/thoughtstem/ts-all-dev)
+
 This is a package that simply lists dependencies on other packages --
 namely the dev branches of our various interrelated langauges.
 
