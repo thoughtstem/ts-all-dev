@@ -47,3 +47,15 @@ after_success:
  - raco setup --check-pkg-deps --pkgs ts-all-dev
  - raco pkg install --deps search-auto cover cover-coveralls
  - raco cover -b -f coveralls -d $TRAVIS_BUILD_DIR/coverage .
+
+notifications:
+  email:
+    recipients:
+      - stephen@thoughtstem.com
+      - jason@thoughtstem.com
+      - sonny@thoughtstem.com
+      - sara@thoughtstem.com
+  on_success: always 
+  on_failure: always 
+
+
