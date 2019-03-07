@@ -33,7 +33,18 @@ before_install:
 - export PATH="${RACKET_DIR}/bin:${PATH}" #install-racket.sh can't set for us
 
 install:
- - raco pkg install --deps search-auto
+- raco pkg install https://github.com/thoughtstem/racket-chipmunk.git#dev
+- raco pkg install https://github.com/thoughtstem/ratchet.git#dev
+
+- raco pkg install https://github.com/thoughtstem/game-engine.git#dev
+- raco pkg install https://github.com/thoughtstem/game-engine-rpg.git#dev
+- raco pkg install https://github.com/thoughtstem/game-engine-demos-common.git#dev
+
+- git clone -b dev https://github.com/thoughtstem/TS-Kata-Collections.git
+- git clone -b dev https://github.com/thoughtstem/TS-Languages.git
+- cd $TRAVIS_BUILD_DIR/TS-Kata-Collections/ts-kata-util && raco pkg install --deps search-auto
+- cd $TRAVIS_BUILD_DIR/TS-Languages && git pull origin master && raco install-all-here 
+- cd $TRAVIS_BUILD_DIR/TS-Kata-Collections && git pull origin master && raco install-all-here 
 
 before_script:
 
@@ -43,6 +54,8 @@ before_script:
 script:
  - raco test -x -p ts-all-dev
 
+
+#I want to push to github pages here (in ts-all-master)...
 after_success:
  - raco setup --check-pkg-deps --pkgs ts-all-dev
  - raco pkg install --deps search-auto cover cover-coveralls
